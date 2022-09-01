@@ -1,4 +1,7 @@
 const $ = selector => document.querySelector(selector)
-$('form').addEventListener('submit', (event) : void =>{
-  console.log(`hola`);
+const $form = $('form')
+$('form').addEventListener('submit', (event) =>{
+  event.preventDefault()
+  const data = Object.fromEntries(new window.FormData($form))
+  console.log(data)
 })
